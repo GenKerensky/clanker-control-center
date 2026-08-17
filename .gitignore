@@ -1,0 +1,17 @@
+node_modules
+dist
+release
+*.AppImage
+*.log
+data.json
+data.json.tmp
+usage.json
+usage.json.tmp
+sessions.json
+sessions.json.tmp
+.DS_Store
+*.tsbuildinfo
+.vite
+.vite-plus
+.env
+dashboard.env

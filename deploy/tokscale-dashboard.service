@@ -1,0 +1,20 @@
+[Unit]
+Description=Clanker Control Center
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/code/clanker-control-center
+Environment=PATH=%h/.bun/bin:%h/.vite-plus/bin:/usr/bin
+Environment=TOKSCALE_BIN=%h/.bun/install/global/node_modules/@tokscale/cli-linux-x64-gnu/bin/tokscale
+Environment=TOKSCALE_DASH_HOST=127.0.0.1
+Environment=TOKSCALE_DASH_PORT=3333
+Environment=TOKSCALE_DATA_DIR=%h/.local/share/tokscale-dashboard
+EnvironmentFile=-%h/.config/tokscale/dashboard.env
+ExecStart=/home/falco/.vite-plus/bin/vp node src/server/index.ts
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,13 @@
+appId: local.clanker.control-center
+productName: Clanker Control Center
+directories:
+  output: release
+files:
+  - electron/**
+  - package.json
+linux:
+  target:
+    - AppImage
+  category: Utility
+  icon: public/icons/icon-512.png
+  artifactName: ${productName}-${version}.${ext}
